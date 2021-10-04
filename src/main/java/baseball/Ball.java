@@ -14,6 +14,10 @@ public class Ball {
 		if (position == ball.position && value == ball.value) {
 			return "STRIKE";
 		}
+
+		if (value == ball.value) {
+			return "BALL";
+		}
 		return "NOTHING";
 	}
 }

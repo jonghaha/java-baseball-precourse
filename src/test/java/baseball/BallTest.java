@@ -11,4 +11,11 @@ public class BallTest {
 		String strike = computer.compareBall(new Ball(1, 3));
 		assertThat(strike).isEqualTo("STRIKE");
 	}
+
+	@Test
+	void 볼인가() {
+		Ball computer = new Ball(1, 3);
+		String ball = computer.compareBall(new Ball(2, 3));
+		assertThat(ball).isEqualTo("BALL");
+	}
 }
