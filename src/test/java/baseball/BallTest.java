@@ -18,4 +18,11 @@ public class BallTest {
 		String ball = computer.compareBall(new Ball(2, 3));
 		assertThat(ball).isEqualTo("BALL");
 	}
+
+	@Test
+	void 낫싱인가() {
+		Ball computer = new Ball(1, 3);
+		String nothing = computer.compareBall(new Ball(1, 2));
+		assertThat(nothing).isEqualTo("NOTHING");
+	}
 }
