@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 public class BaseBallTest {
 	List<Ball> comBall = new ArrayList<>();
-	BaseBall computer = null;
+	BaseBall computer;
 
 	@BeforeEach
 	void init() {
