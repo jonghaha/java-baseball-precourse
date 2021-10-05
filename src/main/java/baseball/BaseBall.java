@@ -4,19 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseBall {
-	private final List<Ball> balls;
-	private int strike;
-	private int ball;
+	private List<Ball> balls;
+	private PlayResult result;
 
 	public BaseBall(List<Integer> balls) {
 		this.balls = createBalls(balls);
-		this.strike = 0;
-		this.ball = 0;
+		this.result = new PlayResult();
+	}
+
+	public PlayResult getResult() {
+		return result;
+	}
+
+	public void setResult(PlayResult result) {
+		this.result = result;
 	}
 
 	private List<Ball> createBalls(List<Integer> balls) {
 		List<Ball> ballList = new ArrayList<>();
-		for (int i = 1; i < 3; i++) {
+		for (int i = 1; i <= 3; i++) {
 			ballList.add(new Ball(i, balls.get(i - 1)));
 		}
 		return ballList;
@@ -25,19 +31,11 @@ public class BaseBall {
 	public void playBall(Ball ball) {
 		for (Ball b : balls) {
 			if (b.compareBall(ball).equals("STRIKE")) {
-				this.strike++;
+				result.accumulateStrike();
 			}
 			if (b.compareBall(ball).equals("BALL")) {
-				this.ball++;
+				result.accumulateBall();
 			}
 		}
-	}
-
-	public int getStrike() {
-		return strike;
-	}
-
-	public int getBall() {
-		return ball;
 	}
 }

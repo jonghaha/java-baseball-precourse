@@ -18,13 +18,13 @@ public class BaseBallTest {
 	@Test
 	void 원스트라이크_확인() {
 		computer.playBall(new Ball(2, 5));
-		assertThat(computer.getStrike()).isEqualTo(1);
+		assertThat(computer.getResult().getStrike()).isEqualTo(1);
 	}
 
 	@Test
 	void 원볼_확인() {
 		computer.playBall(new Ball(2, 3));
-		assertThat(computer.getBall()).isEqualTo(1);
+		assertThat(computer.getResult().getBall()).isEqualTo(1);
 	}
 
 	@Test
@@ -32,7 +32,7 @@ public class BaseBallTest {
 		computer.playBall(new Ball(1, 8));
 		computer.playBall(new Ball(2, 7));
 		computer.playBall(new Ball(3, 9));
-		assertThat(computer.getBall()).isEqualTo(0);
-		assertThat(computer.getStrike()).isEqualTo(0);
+		assertThat(computer.getResult().getBall()).isEqualTo(0);
+		assertThat(computer.getResult().getStrike()).isEqualTo(0);
 	}
 }
