@@ -9,6 +9,12 @@ public class VaildationUtils {
 	private final int INPUT_MAX_LENGTH = 3;
 	private final String REGEX = "[0-9]+";
 
+	public List<Integer> validNumber(String userValue) {
+		isThreeDigit(userValue);
+		isNumber(userValue);
+		return isOverlap(userValue);
+	}
+
 	/*
 	* 세자리 숫자 검증
 	* */
