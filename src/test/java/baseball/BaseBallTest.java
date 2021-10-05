@@ -1,23 +1,18 @@
 package baseball;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BaseBallTest {
-	List<Ball> comBall = new ArrayList<>();
 	BaseBall computer;
 
 	@BeforeEach
 	void init() {
-		comBall.add(new Ball(1, 3));
-		comBall.add(new Ball(2, 5));
-		comBall.add(new Ball(3, 2));
-		computer = new BaseBall(comBall);
+		computer = new BaseBall(Arrays.asList(3, 5, 2));
 	}
 
 	@Test
