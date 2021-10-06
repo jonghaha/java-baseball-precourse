@@ -12,15 +12,15 @@ public class Ball {
 		this.value = value;
 	}
 
-	public String compareBall(Ball ball) {
+	public DicisionCode compareBall(Ball ball) {
 		if (this.equals(ball)) {
-			return "STRIKE";
+			return DicisionCode.STRIKE;
 		}
 
 		if (value == ball.value) {
-			return "BALL";
+			return DicisionCode.BALL;
 		}
-		return "NOTHING";
+		return DicisionCode.NOTHING;
 	}
 
 	@Override

@@ -15,19 +15,16 @@ public class BallTest {
 
 	@Test
 	void 스트라이크인가() {
-		String strike = computer.compareBall(new Ball(1, 3));
-		assertThat(strike).isEqualTo("STRIKE");
+		assertThat(computer.compareBall(new Ball(1, 3))).isEqualTo(DicisionCode.STRIKE);
 	}
 
 	@Test
 	void 볼인가() {
-		String ball = computer.compareBall(new Ball(2, 3));
-		assertThat(ball).isEqualTo("BALL");
+		assertThat(computer.compareBall(new Ball(2, 3))).isEqualTo(DicisionCode.BALL);
 	}
 
 	@Test
 	void 낫싱인가() {
-		String nothing = computer.compareBall(new Ball(1, 2));
-		assertThat(nothing).isEqualTo("NOTHING");
+		assertThat(computer.compareBall(new Ball(1, 2))).isEqualTo(DicisionCode.NOTHING);
 	}
 }

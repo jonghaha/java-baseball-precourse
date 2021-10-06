@@ -30,10 +30,10 @@ public class BaseBall {
 
 	public void playBall(Ball ball) {
 		for (Ball b : balls) {
-			if (b.compareBall(ball).equals("STRIKE")) {
+			if (DicisionCode.isStrike(b.compareBall(ball))) {
 				result.accumulateStrike();
 			}
-			if (b.compareBall(ball).equals("BALL")) {
+			if (DicisionCode.isBall(b.compareBall(ball))) {
 				result.accumulateBall();
 			}
 		}
